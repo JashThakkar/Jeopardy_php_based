@@ -27,7 +27,7 @@ $questions = [
     ]
 ];
 
-//  Added Final Jeopardy Question Data
+
 $final_jeopardy = [
     "category" => "Marvel",
     "text" => "This character is known as 2000s spiderman.",

@@ -31,7 +31,7 @@ foreach ($categories as $category) {
 
 
 
-// Initialize Mastery Streaks
+
 $_SESSION['correct'] = [];
 $_SESSION['wrong'] = [];
 $_SESSION['cat_streaks'] = []; 
