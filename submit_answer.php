@@ -30,9 +30,7 @@ $_SESSION['answered'][$cat][$val] = true;
 <div style="font-size: 1.5rem;">
     <p><strong>Team <?= $team ?>'s Answer:</strong> <?= htmlspecialchars($answer) ?></p>
     <p><strong>Correct Answer:</strong> <?= htmlspecialchars($correct) ?></p>
-    
-    <!-- Show the wager if it exists so the host knows the stakes -->
-    <?php if ($wager > 0): ?>
+        <?php if ($wager > 0): ?>
         <p style="color: gold;"><strong>Wager:</strong> $<?= $wager ?></p>
     <?php endif; ?>
 </div>
@@ -45,7 +43,6 @@ $_SESSION['answered'][$cat][$val] = true;
     <input type="hidden" name="team" value="<?= $team ?>">
     <input type="hidden" name="answer" value="<?= htmlspecialchars($answer) ?>">
     
-    <!-- Pass the wager to the scoring page -->
     <input type="hidden" name="wager" value="<?= $wager ?>">
 
     <button type="submit" name="award" value="yes" class="award_yes">YES</button>

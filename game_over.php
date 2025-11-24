@@ -41,7 +41,6 @@ $masterName = $masterTeam !== null ? $_SESSION['team_names'][$masterTeam] : "Non
 
 <h2>Winner: <?= htmlspecialchars($winnerName) ?> — <?= $highestScore ?> points</h2>
 
-<!--  Display for Category Mastery and Final Jeopardy status -->
 <div class="feature-summary">
     <h3> Category Master </h3>
     <p>Most Correct Answers: <span class="mastery-badge"><?= htmlspecialchars($masterName) ?> (<?= $mostCorrect ?>)</span></p>

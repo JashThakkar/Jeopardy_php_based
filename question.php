@@ -15,7 +15,6 @@ if (isset($_SESSION['daily_double']) &&
     $isDD = true;
 }
 
-//  Check if a wager has already been made
 $wager = isset($_POST['wager_amount']) ? intval($_POST['wager_amount']) : 0;
 ?>
 
@@ -33,15 +32,12 @@ $wager = isset($_POST['wager_amount']) ? intval($_POST['wager_amount']) : 0;
 
 <br>
 
-<!--  Daily Double Interface -->
-
 <?php if ($isDD && $wager === 0): ?>
     
     <div style="text-align: center; border: 4px dashed gold; padding: 20px; width: 60%; margin: auto;">
         <h2 style="color: gold; font-size: 3rem; animation: blink 1s infinite;">DAILY DOUBLE!</h2>
         <p>Make your wager (Max: 1000 or Highest Score)</p>
         
-        <!-- Submits back to THIS page to save the wager -->
         <form method="POST" action="question.php">
             <input type="hidden" name="category" value="<?= $category ?>">
             <input type="hidden" name="value" value="<?= $value ?>">
@@ -61,7 +57,6 @@ $wager = isset($_POST['wager_amount']) ? intval($_POST['wager_amount']) : 0;
         <input type="hidden" name="category" value="<?= $category ?>">
         <input type="hidden" name="value" value="<?= $value ?>">
         
-        <!-- Pass the wager along so we can use it for scoring later -->
         <input type="hidden" name="wager" value="<?= $wager ?>">
 
         <p>Select team answering:</p>

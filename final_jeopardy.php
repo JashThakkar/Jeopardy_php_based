@@ -1,11 +1,8 @@
 <?php
-// filename: final_jeopardy.php
 session_start();
-
 
 include 'game_questions.php';
 
-// Check if $final_jeopardy exists
 if (!isset($final_jeopardy)) {
     die("ERROR: Final Jeopardy question data not found!");
 }
@@ -19,7 +16,6 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     }
 }
 
-// Check if form was submitted (Method is POST)
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
    
     $temp_wagers = [];

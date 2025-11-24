@@ -5,7 +5,6 @@ $teams = $_SESSION['team_names'];
 $correct = $_SESSION['correct'] ?? [];
 $wrong   = $_SESSION['wrong'] ?? [];
 $selectedTeam = $_POST['selected_team'] ?? null;
-// NEW: Get streaks for stats
 $cat_streaks = $_SESSION['cat_streaks'] ?? [];
 ?>
 
@@ -54,7 +53,6 @@ $cat_streaks = $_SESSION['cat_streaks'] ?? [];
         $statement = "You are a great player!";
     }
     
-    //  Calculate active streaks for this team
     $teamStreaks = $cat_streaks[$selectedTeam] ?? [];
     ?>
 
@@ -66,7 +64,6 @@ $cat_streaks = $_SESSION['cat_streaks'] ?? [];
         <br>
         <p><strong>Improvement Statement:</strong> <?= $statement ?></p>
         
-        <!-- Mastery Bonuses Display -->
         <hr style="width: 50%; border-color: #555;">
         <h3>Category Mastery Status</h3>
         <?php if (empty($teamStreaks)): ?>
