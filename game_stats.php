@@ -5,6 +5,10 @@ $teams = $_SESSION['team_names'];
 $correct = $_SESSION['correct'] ?? [];
 $wrong   = $_SESSION['wrong'] ?? [];
 $selectedTeam = $_POST['selected_team'] ?? null;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 11cb8c9e8a80a8e2919b1c1bdc9552f42ac3d34f
 $cat_streaks = $_SESSION['cat_streaks'] ?? [];
 ?>
 
@@ -53,6 +57,10 @@ $cat_streaks = $_SESSION['cat_streaks'] ?? [];
         $statement = "You are a great player!";
     }
     
+<<<<<<< HEAD
+=======
+  
+>>>>>>> 11cb8c9e8a80a8e2919b1c1bdc9552f42ac3d34f
     $teamStreaks = $cat_streaks[$selectedTeam] ?? [];
     ?>
 
@@ -64,6 +72,10 @@ $cat_streaks = $_SESSION['cat_streaks'] ?? [];
         <br>
         <p><strong>Improvement Statement:</strong> <?= $statement ?></p>
         
+<<<<<<< HEAD
+=======
+        
+>>>>>>> 11cb8c9e8a80a8e2919b1c1bdc9552f42ac3d34f
         <hr style="width: 50%; border-color: #555;">
         <h3>Category Mastery Status</h3>
         <?php if (empty($teamStreaks)): ?>

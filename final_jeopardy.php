@@ -1,8 +1,16 @@
 <?php
+<<<<<<< HEAD
+=======
+
+>>>>>>> 11cb8c9e8a80a8e2919b1c1bdc9552f42ac3d34f
 session_start();
 
 include 'game_questions.php';
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 11cb8c9e8a80a8e2919b1c1bdc9552f42ac3d34f
 if (!isset($final_jeopardy)) {
     die("ERROR: Final Jeopardy question data not found!");
 }
@@ -16,6 +24,10 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     }
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 11cb8c9e8a80a8e2919b1c1bdc9552f42ac3d34f
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
    
     $temp_wagers = [];
@@ -95,7 +107,7 @@ $wagers = $_SESSION['fj_wagers'] ?? [];
 
 <div style="text-align:center; width: 85%; margin: auto;">
     
-    <!-- BETTING PHASE -->
+  
     <?php if (!$showQuestion): ?>
         
         <div class="fj-category">
@@ -113,7 +125,7 @@ $wagers = $_SESSION['fj_wagers'] ?? [];
                     <p style="font-size: 1.2rem;">Current Score: <strong>$<?= $_SESSION['scores'][$num] ?></strong></p>
                     
                     <?php 
-                    // Allow wagering even with negative scores, minimum $1, max of their score or $1000
+                    
                     $maxWager = max(1000, $_SESSION['scores'][$num]); 
                     ?>
                     
@@ -137,7 +149,6 @@ $wagers = $_SESSION['fj_wagers'] ?? [];
             </button>
         </form>
 
-    <!-- QUESTION & GRADING PHASE -->
     <?php else: ?>
 
         <div class="fj-category">

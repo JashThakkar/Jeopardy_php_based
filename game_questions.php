@@ -27,6 +27,10 @@ $questions = [
     ]
 ];
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 11cb8c9e8a80a8e2919b1c1bdc9552f42ac3d34f
 $final_jeopardy = [
     "category" => "Marvel",
     "text" => "This character is known as 2000s spiderman.",
