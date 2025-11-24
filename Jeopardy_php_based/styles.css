@@ -1,0 +1,187 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(180deg, #001f54 0%, #003b8e 50%, #012d73 100%) 
+                no-repeat fixed;
+    color: #ffffff;
+    text-align: center;
+}
+
+.top_bar {
+    padding: 50px 20px;
+    background: rgba(0, 0, 0, 0.35);
+}
+
+.top_bar h1 {
+    margin: 0;
+    font-size: 2.8rem;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 6px #000000;
+}
+
+.top_bar p {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.game_setup {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+}
+
+.players_count {
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    width: 280px;
+    border-radius: 12px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.players_count p {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+#playerCountSelect {
+    padding: 10px;
+    width: 150px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+.start_button {
+    margin-bottom: 500px;
+}
+
+.start_button button {
+    padding: 14px 34px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background: #ffca3a;
+    color: #000;
+    transition: 0.25s ease-in-out;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.start_button button:hover {
+    background: #ffd859;
+    transform: scale(1.07);
+}
+
+@media (max-width: 600px) {
+    .top_bar h1 {
+        font-size: 2rem;
+    }
+
+    .game_setup {
+        margin-top: 20px;
+    }
+}
+
+.team_display {
+    margin-top: 50px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    background: rgba(0,0,0,0.2);
+    border-radius: 12px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.team_box {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 10px;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.submit_button {
+    padding: 14px 34px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background: #ffca3a;
+    color: #000;
+    transition: 0.25s ease-in-out;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.submit_button:hover {
+    background: #ffd859;
+    transform: scale(1.07);
+}
+
+.award_yes {
+    padding: 14px 34px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background: #28a745; /* green */
+    color: #fff;
+    margin-right: 20px;
+    transition: 0.25s ease-in-out;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+}
+
+.award_yes:hover {
+    background: #34d058;
+    transform: scale(1.07);
+}
+
+.award_no {
+    padding: 14px 34px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background: #d9534f;
+    color: #fff;
+    transition: 0.25s ease-in-out;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+}
+
+.award_no:hover {
+    background: #ff6b6b;
+    transform: scale(1.07);
+}
+
+.point_button {
+    padding: 20px;
+    width: 90%;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background: #1e3a8a;
+    color: white;
+    transition: 0.25s ease-in-out;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.point_button:hover {
+    background: #274bbd;
+    box-shadow: 0 0 15px rgba(255, 230, 0, 0.6); 
+    transform: scale(1.04);
+}
