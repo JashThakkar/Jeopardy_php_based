@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-
 if (!isset($_SESSION['board'])) {
     header("Location: index.php");
     exit;
@@ -17,9 +16,7 @@ foreach ($_SESSION['board'] as $category => $values) {
     }
 }
 
-
-if ($allUsed) {
-    
+if ($allUsed) {   
     header("Location: final_jeopardy.php");
     exit;
 }

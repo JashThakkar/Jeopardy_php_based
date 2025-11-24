@@ -38,7 +38,6 @@ $cat_streaks = $_SESSION['cat_streaks'] ?? [];
 <br><br>
 
 <?php if ($selectedTeam): ?>
-
     <?php
     $c = $correct[$selectedTeam] ?? 0;
     $w = $wrong[$selectedTeam] ?? 0;
@@ -52,10 +51,8 @@ $cat_streaks = $_SESSION['cat_streaks'] ?? [];
     } else {
         $statement = "You are a great player!";
     }
-    
     $teamStreaks = $cat_streaks[$selectedTeam] ?? [];
     ?>
-
     <div style="font-size: 1.5rem;">
         <p><strong>Team Name:</strong> <?= htmlspecialchars($teams[$selectedTeam]) ?></p>
         <p><strong>Correct Answers:</strong> <?= $c ?></p>
