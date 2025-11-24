@@ -18,11 +18,7 @@ $selectedPlayers = isset($_POST['playerCount']) ? intval($_POST['playerCount']) 
     <p>Get ready to test your knowledge and battle it out in the ultimate quiz showdown!</p>
   </div><br />
 
-<<<<<<< HEAD
-=======
-  
->>>>>>> 11cb8c9e8a80a8e2919b1c1bdc9552f42ac3d34f
-  <div style="width: 60%; margin: auto; background: #eee; padding: 20px; border-radius: 10px; border: 4px solid #000080; text-align: center;">
+  <div class="rules">
       <h3 style="margin-top:0;">⚠ NEW GAME RULES ⚠</h3>
       <ul style="text-align: left; display: inline-block;">
           <li><strong>Daily Double:</strong> One random question allows you to wager your points!</li>

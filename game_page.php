@@ -1,8 +1,4 @@
 <?php
-<<<<<<< HEAD
-=======
-
->>>>>>> 11cb8c9e8a80a8e2919b1c1bdc9552f42ac3d34f
 session_start();
 
 
@@ -11,17 +7,9 @@ if (!isset($_SESSION['board'])) {
     exit;
 }
 
-<<<<<<< HEAD
 $allUsed = true;
 foreach ($_SESSION['board'] as $category => $values) {
     foreach ($values as $value => $q) {
-=======
-
-$allUsed = true;
-foreach ($_SESSION['board'] as $category => $values) {
-    foreach ($values as $value => $q) {
-        
->>>>>>> 11cb8c9e8a80a8e2919b1c1bdc9552f42ac3d34f
         if (!($_SESSION['answered'][$category][$value] ?? false)) {
             $allUsed = false;
             break 2;
@@ -56,25 +44,13 @@ $pointValues = [100, 250, 500, 1000];
 
 <div style="width: 80%; margin: auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
 
-<<<<<<< HEAD
-=======
-    
->>>>>>> 11cb8c9e8a80a8e2919b1c1bdc9552f42ac3d34f
     <?php foreach ($categories as $cat): ?>
         <div style="font-size: 1.5rem; font-weight: bold;">
             <?= htmlspecialchars($cat) ?>
             
-<<<<<<< HEAD
             <?php
             if (isset($_SESSION['cat_streaks'])) {
                 foreach ($_SESSION['cat_streaks'] as $team => $catData) {
-=======
-            
-            <?php
-            if (isset($_SESSION['cat_streaks'])) {
-                foreach ($_SESSION['cat_streaks'] as $team => $catData) {
-                    
->>>>>>> 11cb8c9e8a80a8e2919b1c1bdc9552f42ac3d34f
                     if (isset($catData[$cat]) && $catData[$cat] >= 2) {
                         echo "<div style='font-size:0.8rem; color: orange;'>🔥 Team $team</div>";
                     }
@@ -84,10 +60,6 @@ $pointValues = [100, 250, 500, 1000];
         </div>
     <?php endforeach; ?>
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 11cb8c9e8a80a8e2919b1c1bdc9552f42ac3d34f
     <?php foreach ($pointValues as $value): ?>
         <?php foreach ($categories as $cat): ?>
             <?php $answered = $_SESSION['answered'][$cat][$value] ?? false; ?>

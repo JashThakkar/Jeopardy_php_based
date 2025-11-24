@@ -15,10 +15,6 @@ if (isset($_SESSION['daily_double']) &&
     $isDD = true;
 }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 11cb8c9e8a80a8e2919b1c1bdc9552f42ac3d34f
 $wager = isset($_POST['wager_amount']) ? intval($_POST['wager_amount']) : 0;
 ?>
 
@@ -36,21 +32,12 @@ $wager = isset($_POST['wager_amount']) ? intval($_POST['wager_amount']) : 0;
 
 <br>
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 11cb8c9e8a80a8e2919b1c1bdc9552f42ac3d34f
 <?php if ($isDD && $wager === 0): ?>
     
     <div style="text-align: center; border: 4px dashed gold; padding: 20px; width: 60%; margin: auto;">
         <h2 style="color: gold; font-size: 3rem; animation: blink 1s infinite;">DAILY DOUBLE!</h2>
         <p>Make your wager (Max: 1000 or Highest Score)</p>
         
-<<<<<<< HEAD
-=======
-       
->>>>>>> 11cb8c9e8a80a8e2919b1c1bdc9552f42ac3d34f
         <form method="POST" action="question.php">
             <input type="hidden" name="category" value="<?= $category ?>">
             <input type="hidden" name="value" value="<?= $value ?>">
@@ -70,10 +57,6 @@ $wager = isset($_POST['wager_amount']) ? intval($_POST['wager_amount']) : 0;
         <input type="hidden" name="category" value="<?= $category ?>">
         <input type="hidden" name="value" value="<?= $value ?>">
         
-<<<<<<< HEAD
-=======
-        
->>>>>>> 11cb8c9e8a80a8e2919b1c1bdc9552f42ac3d34f
         <input type="hidden" name="wager" value="<?= $wager ?>">
 
         <p>Select team answering:</p>

@@ -1,5 +1,4 @@
 <?php
-// filename: award_points.php
 session_start();
 
 $cat = $_POST['category'];
@@ -23,7 +22,6 @@ if ($award === "yes") {
     $_SESSION['scores'][$team] += $val;
     $_SESSION['correct'][$team] = ($_SESSION['correct'][$team] ?? 0) + 1;
     
-    // Category Mastery Logic
     if ($cat !== 'Final Jeopardy') {
         if (!isset($_SESSION['cat_streaks'][$team][$cat])) {
             $_SESSION['cat_streaks'][$team][$cat] = 0;
@@ -48,7 +46,6 @@ if ($award === "yes") {
         $_SESSION['cat_streaks'][$team][$cat] = 0;
     }
 
-    // Risk Management (Deduct if Wager)
     if ($wager > 0) {
         $_SESSION['scores'][$team] -= $val;
         $_SESSION['last_message'] = "Wager lost! Team $team deducted $val points.";

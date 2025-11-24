@@ -1,16 +1,8 @@
 <?php
-<<<<<<< HEAD
-=======
-
->>>>>>> 11cb8c9e8a80a8e2919b1c1bdc9552f42ac3d34f
 session_start();
 
 include 'game_questions.php';
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 11cb8c9e8a80a8e2919b1c1bdc9552f42ac3d34f
 if (!isset($final_jeopardy)) {
     die("ERROR: Final Jeopardy question data not found!");
 }
@@ -24,10 +16,6 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     }
 }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 11cb8c9e8a80a8e2919b1c1bdc9552f42ac3d34f
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
    
     $temp_wagers = [];
@@ -55,47 +43,6 @@ $wagers = $_SESSION['fj_wagers'] ?? [];
 <head>
     <title>Final Jeopardy</title>
     <link rel="stylesheet" href="styles.css" />
-    <style>
-        .fj-category {
-            font-size: 2rem;
-            color: #ffca3a;
-            margin: 30px 0;
-            text-shadow: 2px 2px 4px #000;
-        }
-        .fj-question {
-            font-size: 2.5rem;
-            line-height: 1.5;
-            padding: 40px;
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 15px;
-            margin: 20px auto;
-            max-width: 800px;
-            border: 3px solid #ffca3a;
-        }
-        .wager-box {
-            margin: 20px;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            display: inline-block;
-            border-radius: 10px;
-            backdrop-filter: blur(5px);
-            min-width: 250px;
-        }
-        .grading-box {
-            border: 2px solid #ccc;
-            padding: 20px;
-            margin: 15px;
-            border-radius: 12px;
-            background: rgba(255, 255, 255, 0.1);
-            display: inline-block;
-            min-width: 280px;
-        }
-        .wager-amount {
-            color: gold;
-            font-size: 1.3rem;
-            font-weight: bold;
-        }
-    </style>
 </head>
 <body>
 

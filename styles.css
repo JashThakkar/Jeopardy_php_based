@@ -2,8 +2,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(180deg, #001f54 0%, #003b8e 50%, #012d73 100%) 
-                no-repeat fixed;
+    background: linear-gradient(180deg, #001f54 0%, #003b8e 50%, #012d73 100%) no-repeat fixed;
     color: #ffffff;
     text-align: center;
 }
@@ -96,7 +95,7 @@ body {
     justify-content: center;
     gap: 40px;
     flex-wrap: wrap;
-    background: rgba(0,0,0,0.2);
+    background: rgba(0, 0, 0, 0.2);
     border-radius: 12px;
     width: 80%;
     margin-left: auto;
@@ -106,10 +105,10 @@ body {
 .team_box {
     font-size: 1.2rem;
     padding: 10px 20px;
-    background: rgba(255,255,255,0.15);
+    background: rgba(255, 255, 255, 0.15);
     border-radius: 10px;
     backdrop-filter: blur(4px);
-    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .submit_button {
@@ -137,11 +136,12 @@ body {
     border-radius: 10px;
     border: none;
     cursor: pointer;
-    background: #28a745; /* green */
+    background: #28a745;
+    /* green */
     color: #fff;
     margin-right: 20px;
     transition: 0.25s ease-in-out;
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .award_yes:hover {
@@ -159,7 +159,7 @@ body {
     background: #d9534f;
     color: #fff;
     transition: 0.25s ease-in-out;
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .award_no:hover {
@@ -177,11 +177,65 @@ body {
     background: #1e3a8a;
     color: white;
     transition: 0.25s ease-in-out;
-    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .point_button:hover {
     background: #274bbd;
-    box-shadow: 0 0 15px rgba(255, 230, 0, 0.6); 
+    box-shadow: 0 0 15px rgba(255, 230, 0, 0.6);
     transform: scale(1.04);
+}
+
+.fj-category {
+    font-size: 2rem;
+    color: #ffca3a;
+    margin: 30px 0;
+    text-shadow: 2px 2px 4px #000;
+}
+
+.fj-question {
+    font-size: 2.5rem;
+    line-height: 1.5;
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    margin: 20px auto;
+    max-width: 800px;
+    border: 3px solid #ffca3a;
+}
+
+.wager-box {
+    margin: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    display: inline-block;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    min-width: 250px;
+}
+
+.grading-box {
+    border: 2px solid #ccc;
+    padding: 20px;
+    margin: 15px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    display: inline-block;
+    min-width: 280px;
+}
+
+.wager-amount {
+    color: gold;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.rules {
+    width: 60%;
+    margin: auto;
+    background: #eee;
+    padding: 20px;
+    border-radius: 10px;
+    border: 4px solid #000080;
+    text-align: center
 }

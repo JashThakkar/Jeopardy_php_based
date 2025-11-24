@@ -25,12 +25,6 @@ foreach ($categories as $category) {
     }
 }
 
-<<<<<<< HEAD
-=======
-
-
-
->>>>>>> 11cb8c9e8a80a8e2919b1c1bdc9552f42ac3d34f
 $_SESSION['correct'] = [];
 $_SESSION['wrong'] = [];
 $_SESSION['cat_streaks'] = []; 
