@@ -4,8 +4,21 @@ session_start();
 $category = $_POST['category'];
 $value = $_POST['value'];
 
+
 $question = $_SESSION['board'][$category][$value];
+
+
+$isDD = false;
+if (isset($_SESSION['daily_double']) && 
+    $_SESSION['daily_double']['category'] === $category && 
+    $_SESSION['daily_double']['value'] == $value) {
+    $isDD = true;
+}
+
+//  Check if a wager has already been made
+$wager = isset($_POST['wager_amount']) ? intval($_POST['wager_amount']) : 0;
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,30 +33,60 @@ $question = $_SESSION['board'][$category][$value];
 
 <br>
 
-<h2><?= htmlspecialchars($question['text']); ?></h2>
+<!--  Daily Double Interface -->
 
-<br>
+<?php if ($isDD && $wager === 0): ?>
+    
+    <div style="text-align: center; border: 4px dashed gold; padding: 20px; width: 60%; margin: auto;">
+        <h2 style="color: gold; font-size: 3rem; animation: blink 1s infinite;">DAILY DOUBLE!</h2>
+        <p>Make your wager (Max: 1000 or Highest Score)</p>
+        
+        <!-- Submits back to THIS page to save the wager -->
+        <form method="POST" action="question.php">
+            <input type="hidden" name="category" value="<?= $category ?>">
+            <input type="hidden" name="value" value="<?= $value ?>">
+            <input type="number" name="wager_amount" min="1" required class="answer_input">
+            <br><br>
+            <button class="submit_button">Set Wager</button>
+        </form>
+    </div>
 
-<form method="POST" action="submit_answer.php">
-    <input type="hidden" name="category" value="<?= $category ?>">
-    <input type="hidden" name="value" value="<?= $value ?>">
+<?php else: ?>
+   
+    <h2><?= htmlspecialchars($question['text']); ?></h2>
 
-    <p>Select team answering:</p>
+    <br>
 
-    <select name="team" required>
-        <?php foreach ($_SESSION['team_names'] as $teamNum => $teamName): ?>
-            <option value="<?= $teamNum ?>">Team <?= $teamNum ?> (<?= htmlspecialchars($teamName) ?>)</option>
-        <?php endforeach; ?>
-    </select>
+    <form method="POST" action="submit_answer.php">
+        <input type="hidden" name="category" value="<?= $category ?>">
+        <input type="hidden" name="value" value="<?= $value ?>">
+        
+        <!-- Pass the wager along so we can use it for scoring later -->
+        <input type="hidden" name="wager" value="<?= $wager ?>">
 
-    <br><br>
+        <p>Select team answering:</p>
 
-    <input type="text" name="answer" placeholder="Your answer..." required>
+        <select name="team" required>
+            <?php foreach ($_SESSION['team_names'] as $teamNum => $teamName): ?>
+                <option value="<?= $teamNum ?>">Team <?= $teamNum ?> (<?= htmlspecialchars($teamName) ?>)</option>
+            <?php endforeach; ?>
+        </select>
 
-    <br><br>
+        <br><br>
 
-    <button type="submit" class="submit_button">Submit Answer</button>
-</form>
+        <input type="text" name="answer" placeholder="Your answer..." required>
+
+        <br><br>
+
+        <button type="submit" class="submit_button">Submit Answer</button>
+    </form>
+    
+<?php endif; ?>
+
+<style>
+
+@keyframes blink { 50% { opacity: 0.5; } }
+</style>
 
 </body>
 </html>

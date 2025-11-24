@@ -1,29 +1,34 @@
 <?php
+// filename: game_page.php
 session_start();
 
-$allUsed = true;
-
-foreach ($_SESSION['board'] as $category => $values) {
-    foreach ($values as $value => $q) {
-        if (!($_SESSION['answered'][$category][$value] ?? false)) {
-            $allUsed = false;
-            break 2;
-        }
-    }
-}
-if ($allUsed) {
-    header("Location: game_over.php");
-    exit;
-}
 
 if (!isset($_SESSION['board'])) {
     header("Location: index.php");
     exit;
 }
 
+//  CHECK IF BOARD IS EMPTY
+$allUsed = true;
+foreach ($_SESSION['board'] as $category => $values) {
+    foreach ($values as $value => $q) {
+        // If even ONE question is not answered, the board is not empty
+        if (!($_SESSION['answered'][$category][$value] ?? false)) {
+            $allUsed = false;
+            break 2;
+        }
+    }
+}
+
+
+if ($allUsed) {
+    
+    header("Location: final_jeopardy.php");
+    exit;
+}
+
 $board = $_SESSION['board'];
 $categories = array_keys($board);
-
 $pointValues = [100, 250, 500, 1000];
 ?>
 <!DOCTYPE html>
@@ -40,22 +45,31 @@ $pointValues = [100, 250, 500, 1000];
 
 <br><br>
 
-<!-- GAME BOARD GRID -->
 <div style="width: 80%; margin: auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
 
-    <!-- CATEGORY HEADERS -->
+    <!-- CATEGORY HEADERS (Now with Mastery Icons) -->
     <?php foreach ($categories as $cat): ?>
-        <div style="font-size: 1.5rem; font-weight: bold;"><?= htmlspecialchars($cat) ?></div>
+        <div style="font-size: 1.5rem; font-weight: bold;">
+            <?= htmlspecialchars($cat) ?>
+            
+            <!-- CHECK FOR STREAKS -->
+            <?php
+            if (isset($_SESSION['cat_streaks'])) {
+                foreach ($_SESSION['cat_streaks'] as $team => $catData) {
+                    // If streak is 2 or more, show the fire icon
+                    if (isset($catData[$cat]) && $catData[$cat] >= 2) {
+                        echo "<div style='font-size:0.8rem; color: orange;'>🔥 Team $team</div>";
+                    }
+                }
+            }
+            ?>
+        </div>
     <?php endforeach; ?>
 
-    <!-- ROWS: POINT VALUES -->
+    <!-- THE GRID -->
     <?php foreach ($pointValues as $value): ?>
         <?php foreach ($categories as $cat): ?>
-
-            <?php
-            $answered = $_SESSION['answered'][$cat][$value] ?? false;
-            ?>
-
+            <?php $answered = $_SESSION['answered'][$cat][$value] ?? false; ?>
             <div>
                 <?php if ($answered): ?>
                     <button disabled style="padding:20px;width:90%;background:#333;color:#999;border-radius:10px;">
@@ -68,11 +82,9 @@ $pointValues = [100, 250, 500, 1000];
                         <button type="submit" class="point_button">
                             <?= $value ?>
                         </button>
-
                     </form>
                 <?php endif; ?>
             </div>
-
         <?php endforeach; ?>
     <?php endforeach; ?>
 

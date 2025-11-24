@@ -18,6 +18,17 @@ $selectedPlayers = isset($_POST['playerCount']) ? intval($_POST['playerCount']) 
     <p>Get ready to test your knowledge and battle it out in the ultimate quiz showdown!</p>
   </div><br />
 
+  <!-- Added rules section so players know about the new features -->
+  <div style="width: 60%; margin: auto; background: #eee; padding: 20px; border-radius: 10px; border: 4px solid #000080; text-align: center;">
+      <h3 style="margin-top:0;">⚠ NEW GAME RULES ⚠</h3>
+      <ul style="text-align: left; display: inline-block;">
+          <li><strong>Daily Double:</strong> One random question allows you to wager your points!</li>
+          <li><strong>Category Mastery:</strong> Answer 3 in a row correctly in a category for a <strong>1000pt BONUS</strong>.</li>
+          <li><strong>Final Jeopardy:</strong> A high-stakes betting round ends the game.</li>
+      </ul>
+  </div>
+  <br />
+
   <div class="game_setup">
     <form method="POST" action="index.php">
       <div class="players_count">
