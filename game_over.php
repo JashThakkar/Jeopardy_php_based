@@ -24,12 +24,6 @@ $masterName = $masterTeam !== null ? $_SESSION['team_names'][$masterTeam] : "Non
 <head>
     <title>Game Over</title>
     <link rel="stylesheet" href="styles.css" />
-    <style>
-        
-        .feature-summary { margin-top: 20px; border: 2px solid #ffcc00; padding: 15px; border-radius: 10px; display: inline-block; background-color: #f9f9f9; }
-        .mastery-badge { color: #d35400; font-weight: bold; }
-        .final-j-note { font-style: italic; color: #555; margin-top: 10px; }
-    </style>
 </head>
 <body>
 
@@ -41,13 +35,9 @@ $masterName = $masterTeam !== null ? $_SESSION['team_names'][$masterTeam] : "Non
 
 <h2>Winner: <?= htmlspecialchars($winnerName) ?> — <?= $highestScore ?> points</h2>
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 11cb8c9e8a80a8e2919b1c1bdc9552f42ac3d34f
 <div class="feature-summary">
     <h3> Category Master </h3>
-    <p>Most Correct Answers: <span class="mastery-badge"><?= htmlspecialchars($masterName) ?> (<?= $mostCorrect ?>)</span></p>
+    <p>Most Correct Answers: Team: <span class="mastery-badge"><?= htmlspecialchars($masterName) ?> With: <?= $mostCorrect ?></span></p>
     <div class="final-j-note">
         * Final Jeopardy Wagers have been deducted/added to final scores.
     </div>
