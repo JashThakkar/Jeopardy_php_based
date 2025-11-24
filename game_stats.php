@@ -5,6 +5,8 @@ $teams = $_SESSION['team_names'];
 $correct = $_SESSION['correct'] ?? [];
 $wrong   = $_SESSION['wrong'] ?? [];
 $selectedTeam = $_POST['selected_team'] ?? null;
+// NEW: Get streaks for stats
+$cat_streaks = $_SESSION['cat_streaks'] ?? [];
 ?>
 
 <!DOCTYPE html>
@@ -51,6 +53,9 @@ $selectedTeam = $_POST['selected_team'] ?? null;
     } else {
         $statement = "You are a great player!";
     }
+    
+    //  Calculate active streaks for this team
+    $teamStreaks = $cat_streaks[$selectedTeam] ?? [];
     ?>
 
     <div style="font-size: 1.5rem;">
@@ -60,6 +65,25 @@ $selectedTeam = $_POST['selected_team'] ?? null;
         <p><strong>Accuracy:</strong> <?= $acc ?>%</p>
         <br>
         <p><strong>Improvement Statement:</strong> <?= $statement ?></p>
+        
+        <!-- Mastery Bonuses Display -->
+        <hr style="width: 50%; border-color: #555;">
+        <h3>Category Mastery Status</h3>
+        <?php if (empty($teamStreaks)): ?>
+            <p style="font-size: 1rem; color: #777;">No active streaks yet.</p>
+        <?php else: ?>
+            <ul style="list-style: none; padding: 0;">
+            <?php foreach ($teamStreaks as $catName => $streakCount): ?>
+                <li>
+                    <strong><?= htmlspecialchars($catName) ?>:</strong> 
+                    <?= $streakCount ?> in a row
+                    <?php if ($streakCount >= 3): ?>
+                        <span style="color: gold;">★ MASTERED (Bonus Unlocked)</span>
+                    <?php endif; ?>
+                </li>
+            <?php endforeach; ?>
+            </ul>
+        <?php endif; ?>
     </div>
 
 <?php endif; ?>

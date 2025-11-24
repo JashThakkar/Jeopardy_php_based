@@ -26,3 +26,11 @@ $questions = [
         ["text" => "What is the main muscle used in bicep curls?", "answer" => "Biceps"]
     ]
 ];
+
+//  Added Final Jeopardy Question Data
+$final_jeopardy = [
+    "category" => "Marvel",
+    "text" => "This character is known as 2000s spiderman.",
+    "answer" => "Tobey Maguire spiderman"
+];
+?>
